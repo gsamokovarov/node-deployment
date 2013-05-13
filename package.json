@@ -1,0 +1,15 @@
+{
+  "name": "node-deployment",
+  "description": "Node.js Deployment",
+  "version": "0.0.1",
+  "author": "Genadi Samokovarov <gsamokovarov@gmail.com>",
+  "keywords": [
+    "node",
+    "deployment",
+    "presentation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gsamokovarov/node-deployment.git"
+  }
+}
