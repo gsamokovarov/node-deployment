@@ -220,6 +220,45 @@ npm@1.2.15 /usr/local/lib/node_modules/npm
               <li class=fragment>Модулност</li>
             </ul>
           </section>
+
+          <section>
+            <h1>Компоненти</h1>
+            <div class=fragment>
+              <p>Глобална конзолна апликация</p>
+              <pre><code>npm install -g grunt-cli</code></pre>
+            </div>
+            <div class=fragment>
+              <p>Модули, специфични за текущия проект</p>
+              <pre><code data-trim>
+{
+  devDependencies: {
+    "grunt": "~0.4",
+    "grunt-contrib-uglify": "~0.2"
+  }
+}
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h1>Gruntfile</h1>
+            <pre class=fragment><code data-trim>
+module.exports = function(grunt) {
+  grunt.initConfig({
+    uglify: {
+      dist: {
+        src: ['lib/simple-machine.js'],
+        dest: 'simple-machine.min.js'
+      }
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+
+  grunt.registerTask('default', ['uglify']);
+};
+            </code></pre>
+          </section>
         </section>
 
         <section>
