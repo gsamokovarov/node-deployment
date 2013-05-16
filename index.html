@@ -10,7 +10,7 @@
 
     <link rel=stylesheet href=vendor/reveal.js/css/reveal.css>
     <link rel=stylesheet href=vendor/reveal.js/css/theme/simple.css>
-    <link rel=stylesheet href=vendor/reveal.js/lib/css/zenburn.css>
+    <link rel=stylesheet href=vendor/github.css>
 
     <style>
       .reveal,
@@ -79,11 +79,11 @@
         <section>
           <h1>Следва</h1>
           <br>
-          <p>За какво ще си говорим в следващите 30 минути:</p>
+          <p>За какво ще си говорим в следващите 30 минути?</p>
           <br>
           <ul>
-            <li>NPM и управление на зависимости</li>
-            <li>Grunt и управление на задачи</li>
+            <li class=fragment>NPM и управление на зависимости</li>
+            <li class=fragment>Grunt и управление на задачи</li>
           </ul>
         </section>
 
@@ -162,10 +162,10 @@ npm@1.2.15 /usr/local/lib/node_modules/npm
 
           <section>
             <h1>package.json</h1>
-            <p class=fragment>Това е съществената част. <span class=fragment>Описва:</span></p>
+            <p class=fragment>Това е съществената част и описва:</p>
             <ul>
-              <li class=fragment>Production зависимости</li>
-              <li class=fragment>Development зависимости</li>
+              <li class=fragment>Твърдите зависимости <span class=fragment>(--production)</span></li>
+              <li class=fragment>Меките зависимости <span class=fragment>(--dev)</span></li>
               <li class=fragment>Мета данни (за публикуване)</li>
             </ul>
           </section>
@@ -217,13 +217,12 @@ npm@1.2.15 /usr/local/lib/node_modules/npm
 
           <section>
             <h1>Важно</h1>
-            <p>Ще говоря само за <code>&quot;grunt&quot;: &quot;&gt;=0.4&quot;</code>!
-            <p class=fragment>Задавайте версии на <a href=https://npmjs.org/doc/json.html#dependencies>зависимостите</a>!</p>
+            <p>Ще говоря само за <code>&quot;grunt&quot;: &quot;&gt;=0.4&quot;</code>
           </section>
 
           <section>
             <h1>JavaScript Task Runner</h1>
-            <p class=fragment>{Make,Rake,Jake,Cake}file на стереоиди. <span class=fragment>(горе-долу)</span></p>
+            <p class=fragment>{Make,Rake,Jake,Cake}file на стереоиди <span class=fragment>(горе-долу)</span></p>
             <ul>
               <li class=fragment>Автоматизация</li>
               <li class=fragment>Конфигурация</li>
@@ -239,7 +238,7 @@ npm@1.2.15 /usr/local/lib/node_modules/npm
             </div>
             <div class=fragment>
               <p>Модули, специфични за текущия проект</p>
-              <pre><code data-trim>
+              <pre><code class=language-javascript data-trim>
 {
   devDependencies: {
     "grunt": "~0.4",
@@ -251,8 +250,8 @@ npm@1.2.15 /usr/local/lib/node_modules/npm
           </section>
 
           <section>
-            <h1>Gruntfile</h1>
-            <pre class=fragment><code data-trim>
+            <h1>Gruntfile{,.js}</h1>
+            <pre class=fragment><code class=language-javascript data-trim>
 module.exports = function(grunt) {
   grunt.initConfig({
     uglify: {
@@ -272,7 +271,7 @@ module.exports = function(grunt) {
 
           <section>
             <h1>Gruntfile.coffee</h1>
-            <pre class=fragment><code data-trim>
+            <pre class=fragment><code class=language-coffeescript data-trim>
 module.exports = grunt ->
   grunt.initConfig
     uglify:
@@ -284,6 +283,22 @@ module.exports = grunt ->
 
   grunt.registerTask 'default', ['uglify']
             </code></pre>
+          </section>
+
+          <section>
+            <h1>Модули</h1>
+            <p class=fragment>Oбщ преглед на няколко модула:<p>
+            <ul>
+              <li class=fragment>grunt-contrib-coffee</li>
+              <li class=fragment>grunt-contrib-uglify</li>
+              <li class=fragment>grunt-contrib-qunit</li>
+              <li class=fragment>grunt-contrib-watch</li>
+            </ul>
+          </section>
+
+          <section>
+            <h1>Oще</h1>
+            <p class=fragment>Има колкото искате <a href=http://gruntjs.com/plugins>тук</a></p>
           </section>
 
           <section>
