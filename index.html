@@ -216,6 +216,12 @@ npm@1.2.15 /usr/local/lib/node_modules/npm
           </section>
 
           <section>
+            <h1>Важно</h1>
+            <p>Ще говоря само за <code>&quot;grunt&quot;: &quot;&gt;=0.4&quot;</code>!
+            <p class=fragment>Задавайте версии на <a href=https://npmjs.org/doc/json.html#dependencies>зависимостите</a>!</p>
+          </section>
+
+          <section>
             <h1>JavaScript Task Runner</h1>
             <p class=fragment>{Make,Rake,Jake,Cake}file на стереоиди. <span class=fragment>(горе-долу)</span></p>
             <ul>
@@ -261,6 +267,22 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['uglify']);
 };
+            </code></pre>
+          </section>
+
+          <section>
+            <h1>Gruntfile.coffee</h1>
+            <pre class=fragment><code data-trim>
+module.exports = grunt ->
+  grunt.initConfig
+    uglify:
+      dist:
+        src: ['lib/simple-machine.js']
+        dest: 'simple-machine.min.js'
+
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
+
+  grunt.registerTask 'default', ['uglify']
             </code></pre>
           </section>
 
